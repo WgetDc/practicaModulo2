@@ -28,7 +28,8 @@
 
     <div>
     <h3>Lista de cursos</h3>
-        <p class="red">Aun no has realizado cursos</p>
+        <p v-if="totalTime == 0" class="red">Aun no has realizado cursos</p>
+        <p v-if="totalTime > 0">Estos son tus cursos</p>
         <div>
           <table>
             <tr>
@@ -44,7 +45,7 @@
         <hr/>
         <p>
             
-            Llevo <strong>tiempo aca</strong> horas aprendiendo en Platzi.
+            Llevo <strong>{{totalTime}}</strong> horas aprendiendo en Platzi.
             <b>#NuncaParesDeAprender ♥</b>
         </p>
         </div>

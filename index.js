@@ -11,7 +11,13 @@ new Vue({
       }
     },
     
-    computed: {},
+    computed: {
+        totalTime () {
+            if (!this.courses.length) { return 0 }
+            
+            return this.courses.reduce((a, b) => a + parseInt(b.tiempo), 0)
+          }
+    },
     
     methods: {
         addCourse(){
@@ -20,9 +26,11 @@ new Vue({
             }
 
             if(!this.title == '' && !this.time == ''){
-                this.cursos = {titulo: this.title, tiempo: this.time}
-                this.courses.push(this.cursos)
-                console.log(this.courses)}
+                this.courses.push({
+                    titulo: this.title,
+                    tiempo: this.time
+                })
+            }
         }
     }
   })
