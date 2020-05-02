@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Mis cursos de Platzi ♥</h1>
+
+      <div>
+        <p>
+          <input  v-model="title" type="text" placeholder="Nombre del curso" />
+        </p>
+        <p>
+          <input v-model="time" type="number" placeholder="Cantidad de horas" />
+        </p>
+        <p class="red">
+          {{mensajeDeError}}
+        </p>
+        <p>
+            <button class="button" v-on:click="addCourse" type="submit">Guardar curso</button>
+        </p>
+      </div>
+
+    <div>
+    <h3>Lista de cursos</h3>
+        <p class="red">Aun no has realizado cursos</p>
+        <div>
+          <table>
+            <tr>
+              <th>Nombre del curso</th>
+              <th>Tiempo total</th>
+            </tr>
+            <tr v-for="p in courses">
+              <td>{{p.titulo}}</td>
+              <td>{{p.tiempo}}</td>
+            </tr>
+          </table>
+        </ol>
+        <hr/>
+        <p>
+            
+            Llevo <strong>tiempo aca</strong> horas aprendiendo en Platzi.
+            <b>#NuncaParesDeAprender ♥</b>
+        </p>
+        </div>
+    </div>
+
+    <!--aqui termina alcance de vue-->
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
